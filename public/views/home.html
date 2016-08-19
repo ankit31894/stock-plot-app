@@ -1,0 +1,23 @@
+
+<div class="col-sm-offset-2 col-sm-8 errorbox text-center" ng-class="{'error':error!=''}">{{error}}</div>
+
+<div class="col-sm-offset-1 col-sm-5 text-center">
+  <form ng-submit="add($event)" class=" mtb40 stockForm">
+	<p class="iconicfill-pen-alt2"></p>
+	<input autocomplete="off" type="text" placeholder="Enter Stock Code"  name="bar"  ng-model="stockcodeadd" class="col-xs-12">
+
+    <button type="submit" style="display:inline-block;" class="mtb10">Add Stock</button>
+  </form>
+</div>
+<div class="col-sm-5 text-center">
+  <form ng-submit="remove($event)" class="mtb40 stockForm">
+  <p class="iconicfill-pen-alt2"></p>
+  <input autocomplete="off" type="text" placeholder="Enter Any Stock Code Plotted in the Graph"  name="bar"  ng-model="stockcoderem" class="col-xs-12">
+    <button type="submit" style="display:inline-block;" class="mtb10">Remove Stock</button>
+  </form>
+</div>
+
+<div class="col-sm-8 col-sm-offset-2 text-center">
+<canvas id="myChart" width="400" height="400"></canvas>
+</div>
+

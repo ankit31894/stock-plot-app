@@ -1,0 +1,145 @@
+body {
+  background: #333;
+}
+
+.errorbox {
+  color: #fff;
+  webkit-transition: all 0.4s linear;
+  -kthtml-transition: all 0.4s linear;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+  opacity: 0;
+}
+
+.error {
+  opacity: 1;
+}
+
+#myChart {
+  background: #ccc;
+}
+
+.transitioned {
+  webkit-transition: all 0.5s linear;
+  -kthtml-transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.ptb30 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.ptb10 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.ptb20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.mtb40 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.mtb10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.mb30 {
+  margin-bottom: 30px;
+}
+
+.mt100 {
+  margin-top: 100px;
+}
+
+.mt30 {
+  margin-top: 30px;
+}
+
+.ptb15 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+header {
+  background: #000;
+  color: #fff;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.colfff {
+  color: #fff;
+}
+
+.bg000 {
+  background: #000;
+}
+
+.stockForm {
+  /* code taken from http://codepen.io/fluxus/pen/xwDzB*/
+  /* ==== Pen animation ==== */
+}
+.stockForm input, .stockForm button {
+  display: block;
+  padding: 15px 0 15px 12px;
+  font-weight: 400;
+  background: rgba(0, 0, 0, 0.3);
+  outline: none;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  transition: all .3s ease-in-out;
+  position: relative;
+  font-size: 13px;
+}
+.stockForm input:focus {
+  text-indent: 12px;
+  box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.4), 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+.stockForm input {
+  animation: attention 2s ease-in infinite alternate;
+}
+.stockForm button {
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
+  padding: 15px 5px;
+}
+.stockForm label {
+  display: block;
+  position: static;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: 'Arvo';
+  font-size: 16px;
+}
+.stockForm .iconicfill-pen-alt2 {
+  position: absolute;
+  left: 10px;
+  color: #fff;
+  font-size: 19px;
+  opacity: 1;
+  top: 0;
+  transform: translateX(-100px);
+}
+.stockForm .move-pen {
+  animation: move-pen 1s ease-in infinite alternate;
+}
+@keyframes move-pen {
+  from {
+    transform: translateX(-4px) rotate(6deg);
+  }
+  to {
+    transform: translateX(4px) rotate(-3deg);
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

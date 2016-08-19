@@ -1,0 +1,19 @@
+{
+  "name": "Stock-Market-Charting-App",
+  "main": "server.js",
+  "dependencies": {
+    "csv": "^1.1.0",
+    "ejs": "^2.4.2",
+    "express": "^4.14.0",
+    "express-session": "^1.13.0",
+    "mongoose": "^4.5.0",
+    "morgan": "*",
+    "request": "^2.72.0",
+    "socket.io": "^1.4.8"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}

@@ -1,0 +1,11 @@
+<div ng-repeat="(key, value) in polls">
+  <a href="/poll/{{value._id}}">
+    {{value.pollText}}
+  </a>
+ </div>
+<div ng-if="logged">
+  <form ng-submit="submit($event)">
+    <input name="poll" ng-model="formData.pollText">
+    <button type="submit">Submit</button>
+  </form>
+</div>
