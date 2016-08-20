@@ -64,10 +64,11 @@ angular.module('MainCtrl', []).controller('MainController', function($scope,$htt
     });
     $scope.plot=function(){
     	var ctx = document.getElementById("myChart").getContext("2d");
+    	console.log($scope.data);
 		$scope.myLineChart = new Chart(ctx, {
 		    type: 'line',
 		    data: $scope.data,
-		    options:{ 
+		    options:{
 			    responsive: true,
 			    maintainAspectRatio: false
 			}

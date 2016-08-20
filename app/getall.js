@@ -13,7 +13,6 @@ module.exports=function(req,res,next){
 				counter++;
 				final.push(data);
 				if(counter==entries.length&&flag){
-					console.log(final)
 					res.json(final);
 					flag=false;
 				}
