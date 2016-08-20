@@ -3,9 +3,9 @@ angular.module('MainCtrl', []).controller('MainController', function($scope,$htt
 	var url=window.location.href;
 	var match=url.match(/ankit31894/);
 	if (match===null)
-		var socket = io.connect('http://127.0.0.1:8080');
+		var socket = io();
 	else
-		var socket = io.connect('https://ankit31894-stockapp.herokuapp.com:8080');
+		var socket = io();
 	socket.on('add', function(data){
 		$scope.error='';
 		$scope.$apply();
@@ -13,7 +13,7 @@ angular.module('MainCtrl', []).controller('MainController', function($scope,$htt
 			data:data.data[1],
 			label:data.id
 		})
-		if($scope.data.labels==null)
+		if($scope.data.labels.length===0)
 			$scope.data.labels=data.data[0]
 		$scope.myLineChart.update();
 	});
@@ -38,7 +38,8 @@ angular.module('MainCtrl', []).controller('MainController', function($scope,$htt
 		$scope.$apply()
 	});
 	$scope.data={
-		datasets:[]
+		datasets:[],
+		labels:[]
 	}
     $http({
       url: "/getall",
@@ -64,7 +65,6 @@ angular.module('MainCtrl', []).controller('MainController', function($scope,$htt
     });
     $scope.plot=function(){
     	var ctx = document.getElementById("myChart").getContext("2d");
-    	console.log($scope.data);
 		$scope.myLineChart = new Chart(ctx, {
 		    type: 'line',
 		    data: $scope.data,
