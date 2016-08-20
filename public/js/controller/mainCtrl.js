@@ -5,7 +5,7 @@ angular.module('MainCtrl', []).controller('MainController', function($scope,$htt
 	if (match===null)
 		var socket = io.connect('http://127.0.0.1:8080');
 	else
-		var socket = io.connect('http://ankit31894-stockapp.herokuapp.com:8080');
+		var socket = io.connect('https://ankit31894-stockapp.herokuapp.com:8080');
 	socket.on('add', function(data){
 		$scope.error='';
 		$scope.$apply();
