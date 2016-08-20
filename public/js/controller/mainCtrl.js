@@ -1,6 +1,11 @@
 angular.module('MainCtrl', []).controller('MainController', function($scope,$http) {
 
-	var socket = io.connect('http://127.0.0.1:8080');
+	var url=window.location.href;
+	var match=url.match(/ankit31894/);
+	if (match===null)
+		var socket = io.connect('http://127.0.0.1:8080');
+	else
+		var socket = io.connect('http://ankit31894-stockapp.herokuapp.com:8080');
 	socket.on('add', function(data){
 		$scope.error='';
 		$scope.$apply();
@@ -59,7 +64,6 @@ angular.module('MainCtrl', []).controller('MainController', function($scope,$htt
     });
     $scope.plot=function(){
     	var ctx = document.getElementById("myChart").getContext("2d");
-//		ctx.canvas.height=300;
 		$scope.myLineChart = new Chart(ctx, {
 		    type: 'line',
 		    data: $scope.data,
