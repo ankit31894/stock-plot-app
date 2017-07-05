@@ -4,8 +4,11 @@ module.exports = function (socket, stockId) {
     if (error != null) {
       return socket.emit("exception", "Some Error Occured! Please Try Later");
     }
-    if (statusCode == 404) {
-      return socket.emit("exception", "Stock Symbol Does not Exist!");
+    if (statusCode !== 200) {
+      if (statusCode === 404)
+        return socket.emit("exception", "Stock Symbol Does not Exist!");
+      else 
+        return socket.emit("exception", "Some error occured!");
     }
     var dbdata = {
       stockId: stockId
