@@ -1,5 +1,5 @@
 {
-  "name": "Stock-Market-Charting-App",
+  "name": "Plot-stocks",
   "main": "server.js",
   "dependencies": {
     "csv": "^1.1.0",
