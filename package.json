@@ -18,5 +18,9 @@
     "grunt": "^1.0.1",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0"
+  },
+  "scripts" : {
+    "start": "node server.js",
+    "start:dev": "node server.js ./config/config.dev.json"
   }
 }

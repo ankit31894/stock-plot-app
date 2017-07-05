@@ -1,28 +1,28 @@
 var Stock = require('./models/stock');
-module.exports=function(socket,stockId){
-	require("./retrieve.js")(stockId,function(data,error,statusCode){
-		if(error!=null){
-			return socket.emit("exception","Some Error Occured! Please Try Later");
-		}
-		if(statusCode==404){
-			return socket.emit("exception","Stock Symbol Does not Exist!");
-		}
-		var dbdata={
-			stockId:stockId
-		}
+module.exports = function (socket, stockId) {
+  require("./retrieve.js")(stockId, function (data, error, statusCode) {
+    if (error != null) {
+      return socket.emit("exception", "Some Error Occured! Please Try Later");
+    }
+    if (statusCode == 404) {
+      return socket.emit("exception", "Stock Symbol Does not Exist!");
+    }
+    var dbdata = {
+      stockId: stockId
+    }
 
-		var nStock=new Stock(dbdata);
-		nStock.save(function(err){
+    var nStock = new Stock(dbdata);
+    nStock.save(function (err) {
 
-			if(err){
-			  	if(err.code==11000)
-			  		socket.emit('exception','Stock already exist!')
-			  	else socket.emit('exception','Some Error Occured')
-				return;
-			}
-			socket.emit('add',data);
-			socket.broadcast.emit('add',data);
+      if (err) {
+        if (err.code == 11000)
+          socket.emit('exception', 'Stock already exist!')
+        else socket.emit('exception', 'Some Error Occured')
+        return;
+      }
+      socket.emit('add', data);
+      socket.broadcast.emit('add', data);
 
-		});
-	});
+    });
+  });
 }
