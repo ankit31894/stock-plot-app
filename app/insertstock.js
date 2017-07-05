@@ -8,7 +8,7 @@ module.exports = function (socket, stockId) {
       if (statusCode === 404)
         return socket.emit("exception", "Stock Symbol Does not Exist!");
       else 
-        return socket.emit("exception", "Some error occured!");
+        return socket.emit("exception", "Some error occured! (" + statusCode + ')');
     }
     var dbdata = {
       stockId: stockId
