@@ -19,7 +19,7 @@ module.exports = function (socket, stockId) {
 
       if (err) {
         if (err.code == 11000)
-          socket.emit('exception', 'Stock already exist!')
+          socket.emit('exception', 'Stock already exists!')
         else socket.emit('exception', 'Some Error Occured')
         return;
       }
