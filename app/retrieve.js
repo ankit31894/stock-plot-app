@@ -22,7 +22,7 @@ module.exports = function (stockId, cb) {
         id: stockId,
         data: [x, y]        
       }
-      cb(obj);
+      cb(obj, null, 200);
       return;
     }
     cb(null, error, response.statusCode);
